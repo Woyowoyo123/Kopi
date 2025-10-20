@@ -1,0 +1,17 @@
+
+@font-face {
+  font-family: "Arabica";
+  src: url("./fonts/Arabica.otf") format("opentype");
+}
+
+
+@import "tailwindcss";
+
+@theme {
+  --color-1: #4E2D1A;
+  --color-2: #B38460;
+  --color-3: #352015;
+  --font-aruna: "Poppins", sans-serif;
+  --font-logo: "Akronim", sans-serif;
+  --font-tag: "Akaya Kanadaka", sans-serif;
+}

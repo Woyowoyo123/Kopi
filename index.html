@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Aruna - Nikmati Harimu dengan Secangkir Kopi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akronim&display=swap" rel="stylesheet">
+<link href="./dist/output.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+<body class="bg-3">
+
+    <header class="fixed top-9 left-0 right-0 mx-auto  max-w-[90rem] bg-gradient-to-r from-[#644332] to-[#552F1A] shadow-black shadow-2xl z-50 rounded-full">
+    <nav class=" flex justify-between items-center p-4 hidden md:flex gap-6">
+        <img src=".\gambar\logo.png" alt="logo" class="w-56 mx-20">
+      <ul class="hidden md:flex gap-9 mx-20 text-lg font-semibold font-aruna">
+        <li><a href="#beranda" class="text-white hover:text-yellow-300 transition">Beranda</a></li>
+        <li><a href="#tentang" class="text-white hover:text-yellow-300 transition">Tentang</a></li>
+        <li><a href="#produk" class="text-white hover:text-yellow-300 transition">Produk</a></li>
+        <li><a href="#kontak" class="text-white hover:text-yellow-300 transition">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+    <section id="beranda" class="relative scroll-mt-40 h-screen flex items-center pt-24">
+
+  <div style="background-image: url('./gambar/bg.jpg');" class="absolute inset-0 bg-cover bg-center md:bg-right lg:bg-center bg-no-repeat transform scale-y-[-1] -z-50"></div>
+  <div class="absolute inset-0 bg-gradient-to-bl from-black/80 via-[#2b2b2b]/50 to-black/80 -z-40"></div>
+
+  <!-- Konten -->
+  <div class="relative z-10 max-w-5xl flex flex-col justify-center items-start text-left px-8 md:mx-[6rem]">
+    <h1 data-aos="fade-up" data-aos-delay="200" class="font-logo text-white text-[5rem] sm:text-[5rem] md:text-[8rem] lg:text-[10rem] leading-none">Kopi Aruna</h1>
+    <h2 data-aos="fade-up" data-aos-delay="400" class="font-tag text-[#E6A775] text-[1.2rem] sm:text-[1.5rem] md:text-[1.8rem] -mt-3 md:ml-40">Mulai Harimu Dengan Secangkir Kopi</h2>
+    <p data-aos="fade-up" data-aos-delay="600" class="font-aruna text-white text-base md:text-lg leading-relaxed max-w-[600px] mt-5">
+      Nikmati cita rasa kopi pilihan terbaik dari berbagai daerah di Indonesia. Dipanggang dengan sempurna untuk pengalaman kopi yang tak terlupakan.
+    </p>
+
+    <div data-aos="zoom-in" data-aos-delay="800" class="mt-6 gap-28" class="mt-6 gap-28">
+      <input id="nama" type="text" placeholder="Masukkan nama kamu"
+        class=" border border-[#E6A775] bg-white/20 px-4 py-2 rounded-full mr-8 text-white focus:outline-none focus:ring-2 focus:ring-[#E6A775] w-64" />
+      <select id="menu" class="border border-[#E6A775] bg-[#e6a77f]/80 px-4 py-2 rounded-full mt-5 text-white focus:outline-none focus:ring-2 focus:ring-[#E6A775] w-64">
+        <option value="" disabled selected class="text-white">Pilih menu kopi</option>
+        <option value="Espresso" class="text-black">Espresso</option>
+        <option value="Latte" class="text-black">Latte</option>
+        <option value="Americano" class="text-black">Americano</option>
+      </select>
+
+    </div>
+    <button id="btnPesan" data-aos="zoom-in" data-aos-delay="800"
+      class="bg-[#B38460] hover:bg-[#9a6c4f] px-6 py-4 mt-8 rounded-full text-white font-semibold transition flex items-center justify-center gap-2 shadow-md">
+      <i class="fa-brands fa-whatsapp text-xl"></i> Pesan via WhatsApp
+    </button>
+  </div>
+</section>
+
+<!-- Script -->
+<script>
+  document.getElementById("btnPesan").addEventListener("click", function() {
+    const nomor = "6285813455362"; // 🔥 Ganti dengan nomor WhatsApp kamu
+    const nama = document.getElementById("nama").value.trim();
+    const menu = document.getElementById("menu").value;
+
+    if (!nama || !menu) {
+      alert("Isi nama dan pilih menu dulu ya ☕");
+      return;
+    }
+
+    // Format pesan WhatsApp
+    const pesan = encodeURIComponent(
+      `Halo Kopi Aruna! Saya ${nama} ingin memesan menu: ${menu}. Mohon konfirmasi ketersediaannya. Terima kasih`
+    );
+
+    // Buka WhatsApp
+    const waUrl = `https://wa.me/${nomor}?text=${pesan}`;
+    window.open(waUrl, "_blank");
+  });
+</script>
+
+    <section id="tentang" class="bg-gradient-to-r from-[#744327] to-[#352015] scroll-mt-40 text-center justify-between items-center ">
+        <img src="./gambar/kopi.png" alt="1" class="absolute hidden right-0 w-xs opacity-20 hidden md:flex z-4"data-aos="fade-right" data-aos-delay="400">
+        <img src="./gambar/kopi1.png" alt="2" class="absolute hidden left-0 w-xs opacity-40 hidden md:flex"data-aos="fade-left" data-aos-delay="400">
+        <h1 data-aos="zoom-in" class="text-white font-aruna text-center font-bold pt-10 text-3xl">Tentang Kami</h1>
+        <img data-aos="zoom-in" src=".\gambar\logo.png" alt="logo" class="w-3xs mx-auto mt-4">
+        <p data-aos="fade-up" class="max-w-4xl mx-auto text-white font-aruna py-5 pb-10">Kopi Aruna lahir dari semangat untuk menghadirkan cita rasa kopi Nusantara ke setiap cangkir.<br> Kami percaya,secangkir kopi bukan sekadar minuman - tapi momen untuk menikmati hari dengan penuh makna. <br>Diproses dari biji pilihan dan di panggang dengan sepenuh hati,kami setiap tegukkan kopi Aruni jadi <br>pengalaman yang hangat dan tak terlupakan</p>
+    </section>
+
+    <section id="produk" class="scroll-mt-40">
+        <div class="bg-[#2D1C12]">
+        <h1 class="text-white font-aruna font-semibold text-3xl text-center pt-8 ">Produk Kami</h1>
+        
+        
+        <div class="flex flex-wrap justify-center gap-10 px-6 py-9">
+        
+            <div data-aos="zoom-in-up" data-aos-delay="100" class="backdrop-blur-md bg-white/5 rounded-3xl p-6 w-[18rem] flex flex-col items-center text-center border border-[#E6A775] shadow-lg hover:scale-105 transition-transform duration-300">
+            <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
+            <img src=".\gambar\espresso.jpg" alt="eperesso" class=" rounded-full">
+            </div>
+            <h3 class="text-white font-bold text-xl mb-2 font-aruna">Espresso Aruna</h3>
+            <p class="text-white/80 mb-3 text-sm leading-relaxed font-aruna">Pekat,kuat dan penuh karakter.Untuk kamu yang mulai hari dengan semangat</p>
+            <h2 class="text-[#E6A775] font-semibold text-2xl font-aruna pt-7">Rp.20.000.-</h2>
+            </div>
+
+
+            <div data-aos="zoom-in-up" data-aos-delay="200" class="backdrop-blur-md bg-white/5 rounded-3xl p-6 w-[18rem] flex flex-col items-center text-center border border-[#E6A775] shadow-lg hover:scale-105 transition-transform duration-300">
+            <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
+            <img src=".\gambar\america.jpg" alt="america" class="rounded-full">
+            </div>
+            <h3 class="text-white font-bold text-xl mb-2 font-aruna">Americano Aruna</h3>
+            <p class="text-white/80 mb-3 text-sm leading-relaxed font-aruna">Racikan espresso dan air panas yang seimbang ,menghadirkan rasa jernih dan tenang setiap tegukan</p>
+            <h2 class="text-[#E6A775] font-semibold text-2xl font-aruna">Rp.20.000.-</h2>
+        </div>
+
+            <div data-aos="zoom-in-up" data-aos-delay="300" class="backdrop-blur-md bg-white/5 rounded-3xl p-6 w-[18rem] flex flex-col items-center text-center border border-[#E6A775] shadow-lg hover:scale-105 transition-transform duration-300">
+            <div class="w-40 h-40 rounded-full overflow-hidden mb-4">
+            <img src=".\gambar\latte.jpg" alt="america" class=" rounded-full">
+            </div>
+
+            <h3 class="text-white font-bold text-xl mb-2 font-aruna">Cafe Latte Aruna</h3>
+            <p class="text-white/80 mb-3 text-sm leading-relaxed font-aruna">Perpaduan semputna antara espresso dan susu hangat,menciptakan rasa yang halus dan menenangkan</p>
+            <h2 class="text-[#E6A775] font-semibold text-2xl font-aruna">Rp.30.000.-</h2>
+        </div>
+
+        </div>
+        </div>
+    </section>
+
+     <section id="kontak" data-aos="fade-up" class="bg-gradient-to-r from-[#170e09] to-[#2d1c12] px-6 py-12 text-white">
+    <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 text-center md:text-left">
+      <img data-aos="fade-left" data-aos-delay="200" src="./gambar/logo.png" alt="logo" class="w-3xs sm:w-70 object-contain">
+      <div data-aos="fade-up" data-aos-delay="400">
+        <h2 class="text-2xl font-aruna font-bold mb-2">Kontak Kami</h2>
+        <p class="font-aruna">Kami senang terhubung dengan kamu!</p>
+        <p class="font-aruna">Punya pertanyaan seputar produk, pemesanan, atau kerja sama?</p>
+        <p class="font-aruna mb-4">Langsung aja hubungi kami:</p>
+        <a href="#" class="flex items-center justify-center md:justify-start gap-2 text-sm font-aruna mt-3">
+          <i class="fa-brands fa-whatsapp text-xl text-[#E6A775]"></i> 081491415138
+        </a>
+        <a href="#" class="flex items-center justify-center md:justify-start gap-2 text-sm font-aruna mt-3">
+          <i class="fa-brands fa-instagram text-xl text-[#E6A775]"></i> @arunacoffee
+        </a>
+        <a href="#" class="flex items-center justify-center md:justify-start gap-2 text-sm font-aruna mt-3">
+          <i class="fa-brands fa-tiktok text-xl text-[#E6A775]"></i> @arunakopi
+        </a>
+      </div>
+    </div>
+  </section>
+        </div>
+
+    </section>
+
+
+    <script>
+  AOS.init({
+  duration: 1200,
+  easing: 'ease-in-out',
+  once: true,
+  mirror: true,
+});
+</script>
+
+</body>
+</html>
